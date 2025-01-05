@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import CreateScreen from "./screens/CreateScreen";
+import IndexScreen from "./screens/IndexScreen";
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+function RootStack() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Stack.Navigator screenOptions={{headerTitle:'Blok Uygulamasi'}} >
+      <Stack.Screen name="Index" component={IndexScreen} />
+      <Stack.Screen name="Create" component={CreateScreen} />
+    </Stack.Navigator> 
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+    <NavigationContainer>
+      <RootStack />
+    </NavigationContainer>
+  );
+}
