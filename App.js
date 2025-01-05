@@ -9,10 +9,10 @@ const Stack = createNativeStackNavigator();
 
 function RootStack() {
   return (
-    <Stack.Navigator screenOptions={{headerTitle:'Blok Uygulamasi'}} >
+    <Stack.Navigator screenOptions={{ headerTitle: "Blok Uygulamasi" }}>
       <Stack.Screen name="Index" component={IndexScreen} />
       <Stack.Screen name="Create" component={CreateScreen} />
-    </Stack.Navigator> 
+    </Stack.Navigator>
   );
 }
 
