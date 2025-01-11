@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 
 function RootStack() {
   return (
-    <Stack.Navigator screenOptions={{ headerTitle: "Blok Uygulamasi" }}>
+    <Stack.Navigator screenOptions={{ headerTitle: "Blog Uygulamasi" }}>
       <Stack.Screen
         name="Index"
         component={IndexScreen}
